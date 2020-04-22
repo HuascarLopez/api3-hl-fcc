@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>URL Shortener</title>
+    <link
+      rel="shortcut icon"
+      href="https://cdn.hyperdev.com/us-east-1%3A52a203ff-088b-420f-81be-45bf559d01b1%2Ffavicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="/public/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://use.fontawesome.com/3b98e9f266.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>APIs and Microservices Projects - URL Shortener Microservice</h2>
+      <h3>User Story:</h3>
+      <ol>
+        <li>
+          I can POST a URL to <code>[project_url]/api/shorturl/new</code> and I
+          will receive a shortened URL in the JSON response.<br />Example :
+          <code>{"original_url":"www.google.com","short_url":1}</code>
+        </li>
+        <li>
+          If I pass an invalid URL that doesn't follow the
+          <code>http(s)://www.example.com(/more/routes)</code> format, the JSON
+          response will contain an error like
+          <code>{"error":"invalid URL"}</code><br />
+          HINT: to be sure that the submitted url points to a valid site you can
+          use the function <code>dns.lookup(host, cb)</code> from the
+          <code>dns</code> core module.
+        </li>
+        <li>
+          When I visit the shortened URL, it will redirect me to my original
+          link.
+        </li>
+      </ol>
+
+      <h3>Short URL Creation</h3>
+      <p>
+        Example: <code>POST [project_url]/api/shorturl/new</code> -
+        <code>https://www.google.com</code>
+      </p>
+      <form action="api/shorturl/new" method="POST">
+        <label for="url_input">URL to be shortened</label>
+        <input
+          id="url_input"
+          type="text"
+          name="url"
+          value="https://www.google.com"
+        />
+        <input class="button" type="submit" value="POST URL" />
+      </form>
+      <div id="example">
+        <div>
+          <h3>Example Usage:</h3>
+          <a href="https://thread-paper.glitch.me/api/shorturl/3">
+            [base_url]/api/shorturl/m9s
+          </a>
+        </div>
+        <div>
+          <h3>Will Redirect to:</h3>
+          <a href="https://codepen.io/huascararturo/pens/public">https://codepen.io/huascararturo/pens/public</a>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <section>
+        <p id="footer">
+          Made with <i class="fa fa-heart" style="color:red"></i> by Huascar
+          Arturo
+        </p>
+      </section>
+    </footer>
+  </body>
+</html>
